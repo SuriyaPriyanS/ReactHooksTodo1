@@ -1,0 +1,102 @@
+
+  /* App.css */
+
+.todo-app {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.todo-title {
+  text-align: center;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px #3a9f86 !important;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-description {
+  margin-top: 5px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-origin: content-box;
+}
+
+.input-container button {
+  width: 20%;
+  padding: 15px;
+  background-color: #29543f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input-container button:hover {
+  background-color: #0056b3;
+}
+/* Card.css */
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-details {
+  margin-top: 10px;
+}
+
+.card-details p {
+  margin: 5px 0;
+}
+
+.card-buttons {
+  margin-top: 10px;
+}
+
+.card-buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card-buttons button.edit {
+  background-color: #21beb9;
+  color: #ffffff;
+}
+
+.card-buttons button.delete {
+  background-color: #dc3545 !important;
+  color: #fff;
+}
+
+
+   
