@@ -3,10 +3,10 @@ import React, { useState } from "react";
 // Functional component representing an individual todo item
 const TodoItem = ({ todo, onEdit, onDelete, onStatusChange }) => {
   // Function to determine the class name for the select element
-  const getSelectClassName = () => {
-    if (todo.status === "completed") {
+  const getSelectClassName = (status) => {
+    if (status === "completed") {
       return "btn btn-success"; // Apply green color for completed todos
-    } else if (todo.status === "notCompleted") {
+    } else if (status === "notCompleted") {
       return "btn btn-danger"; // Apply red color for not completed todos
     }
     return "btn btn-info"; // Default color (info)
@@ -34,6 +34,19 @@ const TodoItem = ({ todo, onEdit, onDelete, onStatusChange }) => {
       ...prevTodo,
       [name]: value,
     }));
+  };
+
+  // Function to handle status change in editing mode
+  const handleStatusChange = (e) => {
+    const { value } = e.target;
+    if (isEditing) {
+      setEditedTodo((prevTodo) => ({
+        ...prevTodo,
+        status: value,
+      }));
+    } else {
+      onStatusChange(todo.id, value);
+    }
   };
 
   return (
@@ -67,9 +80,9 @@ const TodoItem = ({ todo, onEdit, onDelete, onStatusChange }) => {
       {/* Select dropdown for changing status */}
       <label>Status : </label>
       <select
-        className={getSelectClassName()}
+        className={getSelectClassName(isEditing ? editedTodo.status : todo.status)}
         value={isEditing ? editedTodo.status : todo.status}
-        onChange={(e) => onStatusChange(todo.id, e.target.value)}
+        onChange={handleStatusChange}
       >
         <option value="notCompleted" className="bg-danger text-white">
           Not Completed
