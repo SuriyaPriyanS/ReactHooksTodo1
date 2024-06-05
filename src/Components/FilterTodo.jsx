@@ -4,7 +4,7 @@ const FilterTodo = ({statusFilter,onStatusFilterChange}) => {
 
     const getSelecClassName = ()=>{
         if(statusFilter === "completed"){
-            return "btn btn -success";
+            return "btn btn-success";
         }
         else if (statusFilter === "notCompleted"){
             return "btn btn-danger";
@@ -19,7 +19,7 @@ const FilterTodo = ({statusFilter,onStatusFilterChange}) => {
                 <div className='filter-todo'>
                     <label>Status Filter</label>
                     <select className={getSelecClassName()} value ={statusFilter} onChange={(e)=>onStatusFilterChange(e.target.value)}>
-                     <option value="all " className='all bg-light'>
+                     <option value="all" className='all bg-light'>
                         All
                      </option>
                      <option value= "completed"className="complete bg-success text-white">
